@@ -2,19 +2,28 @@
 import React, { Component } from 'react'
 import Tiles from './Tiles'
 import {Grid, Col, Row } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import Mads from '../utils/images/Mads'
 export default class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+
     return (
       <Grid className="main-content">
-        <Col className="panel" xl={1} md={3}>
-        test1
-        </Col>
-        <Col xsOffset={1} className="panel" xl={1} md={3}>
-        test2
-        </Col>
-        <Col  xsOffset={1} className="panel" xl={1} md={3}>
-        test3
-        </Col>
+
+
+      <Mads />
+        <Link  to={{ pathname: `/Home/Maddie`}} onClick={() => this.props.newPage("M a d d i e", "hey")} activeClassName="active">
+          <Tiles />
+        </Link>
+        <Link to={`/Home/Dog`}  onClick={() => this.props.newPage("B i s o u", "hey")}   activeClassName="active">
+          <Tiles  onClick={() => this.props.newPage("B i s o u", "hey")} />
+        </Link>
+        <Link to={`/Home/HowTo`} activeClassName="active">
+          <Tiles />
+        </Link>
       </Grid>
     )
   }

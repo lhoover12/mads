@@ -5,12 +5,13 @@ import Router from './Components/Router';
 import {Provider} from 'react-redux';
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import {reducer  as formReducer} from 'redux-form';
+import ducks from "./Components/ducks"
 import thunk from 'redux-thunk';
 
 
 const composeEnhancers = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({name: "mads"})) || compose;
 
-const rootReducer = combineReducers({form: formReducer})
+const rootReducer = combineReducers({ducks, form: formReducer})
 
 var store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 

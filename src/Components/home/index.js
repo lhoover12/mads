@@ -1,3 +1,3 @@
-import Main from './Main'
+import HomeContainer from './HomeContainer'
 
-export default Main;
+export default HomeContainer;

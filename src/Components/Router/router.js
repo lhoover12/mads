@@ -3,15 +3,32 @@ import {  Switch } from 'react-router'
 import {BrowserRouter, Route} from 'react-router-dom'
 import Home from '../home'
 import React, { Component } from 'react'
-
+import Subpage from '../SubPage'
+import {newPage} from '../ducks/reducer'
 export default class Router extends Component {
+  constructor(props){
+    super(props);
+  }
+
   render() {
-    return (
+    const wrapper =(
       <div>
-        <BrowserRouter>
-             <Route exact path='/' component={Home}/>
-        </BrowserRouter>
       </div>
+    )
+    return (
+      
+      
+        <BrowserRouter>
+          <div>
+             <Route exact path='/Home' component={Home}/>
+              <Route exact path='/Home/Maddie' handler={newPage("maddiez","zz")}  component={Subpage}/> 
+             <Route exact path='/Home/Dog'  component={Subpage}/>
+            
+            
+          
+          </div>
+         
+        </BrowserRouter>
     )
   }
 }

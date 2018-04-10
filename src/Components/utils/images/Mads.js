@@ -21,6 +21,56 @@ height:${this.props.height}`
     @media only screen and (max-width: 325px) {
       margin-left -65px;
     }
+
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @-ms-keyframes spin { 
+      0% { 
+        transform: rotate(-20deg); 
+    }       
+    50% { 
+      transform: rotate(20deg); 
+  }   
+    100%{ 
+        transform: rotate(-20deg); 
+    }
+    }
+    @-moz-keyframes spin { 
+      0% { 
+        transform: rotate(-20deg); 
+    }       
+    50% { 
+      transform: rotate(20deg); 
+  }   
+    100%{ 
+        transform: rotate(-20deg); 
+    }
+    }
+    @-webkit-keyframes spin { 
+      0% { 
+        transform: rotate(-20deg); 
+    }       
+    50% { 
+      transform: rotate(20deg); 
+  }   
+    100%{ 
+        transform: rotate(-20deg); 
+    }
+    }
+    @keyframes spin { 
+      0% { 
+            transform: rotate(-20deg); 
+        }       
+        50% { 
+          transform: rotate(20deg); 
+      }   
+        100%{ 
+            transform: rotate(-20deg); 
+        }
+    }
     
 `;
 

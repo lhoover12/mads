@@ -1,6 +1,6 @@
 // using ES6 modules
 import { Switch } from "react-router";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import Home from "../home";
 import React, { Component } from "react";
 import Subpage from "../SubPage";
@@ -23,6 +23,9 @@ export default class Router extends Component {
             component={Subpage}
           />
           <Route exact path="/Home/Dog" component={Subpage} />
+          <Route>
+            <Redirect to="/home" />
+          </Route>
         </div>
       </BrowserRouter>
     );

@@ -1,1 +1,23 @@
-
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  local_dir: "build"
+  provider: s3
+  access_key_id: $AWS_ID
+  secret_access_key: $AWS_SEC
+  bucket: $S3_BUCKET
+  upload-dir: page
+after_deploy:
+  # Allow `awscli` to make requests to CloudFront.
+  - aws configure set preview.cloudfront true
+  # Invalidate every object in the targeted distribution.
+  - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+before_script: .travis/setup.sh
+script: .travis/build.sh

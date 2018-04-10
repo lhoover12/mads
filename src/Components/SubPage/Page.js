@@ -1,23 +1,48 @@
-import React, { Component } from 'react'
-import {newPage} from '../ducks/reducer'
+import React, { Component } from "react";
+import { newPage } from "../ducks/reducer";
+import styled from "styled-components";
 
+const H1 = styled.h1`
+  font-size: 15em;
+  ${props =>
+    props.Text
+      ? `  `
+      : `padding-top: ${window.screen.availHeight /
+          2.5}px; `} @media (max-width: 768px) {
+    font-size: 7em;
+  }
+`;
+const P = styled.h1`
+  @media (max-width: 768px) {
+    font-size: 4em;
+  }
+  font-size: 7em;
+`;
+
+const Pages = styled.div`
+  height: ${window.screen.availHeight}px;
+  ${props =>
+    props.solid
+      ? `
+      background : #fff;`
+      : `
+      background-size: cover;
+      background-position-x: 50%;
+      background-image: url(${props.img});
+
+      background-repeat: no-repeat;
+      background-attachment: fixed;`};
+`;
 export default class Page extends Component {
-
   render() {
- 
-  console.log(this.props.name)    
-    
     return (
-      <div >
-        <h1>
-          {this.props.name}
-        </h1>
-        
-      </div>
-    )
+      <Pages {...this.props}>
+        <H1 {...this.props}> {this.props.Header} </H1>
+        <P> {this.props.Text}</P>
+      </Pages>
+    );
   }
 }
-Page.propTypes= {
-//todo proptypes
-
-}
+Page.propTypes = {
+  //todo proptypes
+};

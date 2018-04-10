@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Mads from "../utils/images/Mads";
 import { Motion, spring } from "react-motion";
 import styled from "styled-components";
+import Page from "../SubPage";
+import Bis from "../../pics/BIS.jpg";
+import FLower from "../../pics/Flower.jpg";
 const Con = styled.div`
   position: absolute;
   height: 30%;
@@ -81,26 +84,29 @@ var Mad = styled.h1`
 export default class Main extends Component {
   render() {
     return (
-      <Grid>
+      <Grid fluid>
         <FirstRow>
-          <Col md={12} />>
           <Con>
-            <Mad left={"0"} right={"50%"}>
-              M A D{" "}
-            </Mad>
             <Stuff>
               <Mads width="400" height="400" />
             </Stuff>
+            <Mad left={"0"} right={"50%"}>
+              M A D
+            </Mad>
             <Mad left={"50%"} right={"0%"}>
-              D I E{" "}
+              D I E
             </Mad>
           </Con>
         </FirstRow>
-
-        <Col md={12}> L O L </Col>
-        <Col md={12}> L O L </Col>
-        <Col md={12}> L O L </Col>
-        <Col md={12}> L O L </Col>
+        <Row fluid>
+          <Page img={Bis} />
+          <Page
+            solid
+            Header={"BISOU THE DOG"}
+            Text={"Vivre sans aimer n’est pas proprement vivre."}
+          />
+          <Page img={FLower} Header={"BEAUTY."} />
+        </Row>
       </Grid>
     );
   }

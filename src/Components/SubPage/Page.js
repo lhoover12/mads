@@ -6,6 +6,7 @@ const H1 = styled.h1`
   margin: 0;
   padding-top: 10%;
   font-size: 15em;
+  border-bottom: 1px solid;
   ${props =>
     props.Text
       ? `  `
@@ -23,6 +24,7 @@ const P = styled.h1`
 `;
 
 const Pages = styled.div`
+font-family: league gothic;
   height: ${window.screen.availHeight}px;
   ${props =>
     props.solid

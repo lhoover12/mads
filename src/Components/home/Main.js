@@ -23,7 +23,7 @@ const Con = styled.div `
 z-index: 1 !important;
   position: absolute;
   height: 30%;
-  background-color: #2473a4;
+  background-color: #CF67B8;
   top: 35%;
   left: 0;
   right: 0;
@@ -67,15 +67,16 @@ const Stuff = styled.div `
 `;
 const FirstRow = styled(Row)
 `
-  background-color: #A46E24;
+  background-color: #CF67B8;
   margin-top: ${window.screen.availHeight}px;
   height: 100%;
 `;
 const BackGrid = styled(Grid)
 `
-  background-color: #A46E24;
+  background-color: #833471;
 `;
 var Mad = styled.h1 `
+font-family: Open Sans;
   display: inline-block;
   position: absolute;
   width: 50%;

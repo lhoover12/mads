@@ -3,6 +3,8 @@ import { newPage } from "../ducks/reducer";
 import styled from "styled-components";
 
 const H1 = styled.h1`
+  margin: 0;
+  padding-top: 10%;
   font-size: 15em;
   ${props =>
     props.Text
@@ -13,6 +15,7 @@ const H1 = styled.h1`
   }
 `;
 const P = styled.h1`
+
   @media (max-width: 768px) {
     font-size: 4em;
   }
@@ -23,8 +26,10 @@ const Pages = styled.div`
   height: ${window.screen.availHeight}px;
   ${props =>
     props.solid
-      ? `
-      background : #fff;`
+      ? (props.color? 
+    ` color: #fff;
+      background:${props.color}`:`
+      background : #fff;`)
       : `
       background-size: cover;
       background-position-x: 50%;

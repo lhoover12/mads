@@ -1,14 +1,26 @@
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 import Tiles from "./Tiles";
-import { Grid, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import {
+  Grid,
+  Col,
+  Row
+} from "react-bootstrap";
+import {
+  Link
+} from "react-router-dom";
 import Mads from "../utils/images/Mads";
-import { Motion, spring } from "react-motion";
+import {
+  Motion,
+  spring
+} from "react-motion";
 import styled from "styled-components";
 import Page from "../SubPage";
 import Bis from "../../pics/BIS.jpg";
 import FLower from "../../pics/Flower.jpg";
-const Con = styled.div`
+const Con = styled.div `
+z-index: 1 !important;
   position: absolute;
   height: 30%;
   background-color: #2473a4;
@@ -48,17 +60,22 @@ const Con = styled.div`
       right: 0%;
     }
 `;
-const Stuff = styled.div`
+const Stuff = styled.div `
   margin: -75px;
   width: 50%;
   display: inline-block;
 `;
-const FirstRow = styled(Row)`
+const FirstRow = styled(Row)
+`
+  background-color: #A46E24;
   margin-top: ${window.screen.availHeight}px;
   height: 100%;
 `;
-
-var Mad = styled.h1`
+const BackGrid = styled(Grid)
+`
+  background-color: #A46E24;
+`;
+var Mad = styled.h1 `
   display: inline-block;
   position: absolute;
   width: 50%;
@@ -84,30 +101,26 @@ var Mad = styled.h1`
 export default class Main extends Component {
   render() {
     return (
-      <Grid fluid>
+    <BackGrid fluid>
         <FirstRow>
-          <Con>
-            <Stuff>
-              <Mads width="400" height="400" />
-            </Stuff>
-            <Mad left={"0"} right={"50%"}>
-              M A D
-            </Mad>
-            <Mad left={"50%"} right={"0%"}>
-              D I E
-            </Mad>
-          </Con>
+            <Con>
+                <Stuff>
+                    <Mads width="400" height="400" />
+                </Stuff>
+                <Mad left={ "0"} right={ "50%"}>
+                    M A D
+                </Mad>
+                <Mad left={ "50%"} right={ "0%"}>
+                    D I E
+                </Mad>
+            </Con>
         </FirstRow>
         <Row fluid>
-          <Page img={Bis} />
-          <Page
-            solid
-            Header={"BISOU THE DOG"}
-            Text={"Vivre sans aimer n’est pas proprement vivre."}
-          />
-          <Page img={FLower} Header={"BEAUTY."} />
+            <Page img={Bis} />
+            <Page solid Header={ "BISOU THE DOG"} Text={ "Vivre sans aimer n’est pas proprement vivre."} color={ "#141D71"} />
+            <Page img={FLower} Header={ "BEAUTY."} />
         </Row>
-      </Grid>
+    </BackGrid>
     );
   }
 }

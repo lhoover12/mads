@@ -3,7 +3,9 @@ import { newPage } from "../ducks/reducer";
 import styled from "styled-components";
 
 const H1 = styled.h1`
-  margin: 0;
+  display: inline-block;
+  margin: auto;
+  width: 60%;
   padding-top: 10%;
   font-size: 15em;
   border-bottom: 1px solid;
@@ -16,7 +18,6 @@ const H1 = styled.h1`
   }
 `;
 const P = styled.h1`
-
   @media (max-width: 768px) {
     font-size: 4em;
   }
@@ -24,7 +25,7 @@ const P = styled.h1`
 `;
 
 const Pages = styled.div`
-font-family: league gothic;
+  font-family: league gothic;
   height: ${window.screen.availHeight}px;
   ${props =>
     props.solid
@@ -44,7 +45,10 @@ export default class Page extends Component {
   render() {
     return (
       <Pages {...this.props}>
+      {this.props.Header? 
         <H1 {...this.props}> {this.props.Header} </H1>
+        :
+        ""}
         <P> {this.props.Text}</P>
       </Pages>
     );

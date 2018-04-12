@@ -120,6 +120,7 @@ export default class Main extends Component {
             <Page img={Bis} />
             <Page solid Header={ "BISOU THE DOG"} Text={ "Vivre sans aimer n’est pas proprement vivre."} color={ "#141D71"} />
             <Page img={FLower} Header={ "BEAUTY."} />
+            <Page solid  Header={ "FLOWERS ARE PRETTY."} color={ "#20083E"} />
         </Row>
     </BackGrid>
     );

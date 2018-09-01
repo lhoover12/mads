@@ -1,25 +1,14 @@
-import React, {
-  Component
-} from "react";
+import React, { Component } from "react";
 import Tiles from "./Tiles";
-import {
-  Grid,
-  Col,
-  Row
-} from "react-bootstrap";
-import {
-  Link
-} from "react-router-dom";
+import { Grid, Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Mads from "../utils/images/Mads";
-import {
-  Motion,
-  spring
-} from "react-motion";
+import { Motion, spring } from "react-motion";
 import styled from "styled-components";
 import Page from "../SubPage";
 import Bis from "../../pics/BIS.jpg";
 import FLower from "../../pics/Flower.jpg";
-const Con = styled.div `
+const Con = styled.div`
 z-index: 1 !important;
   position: absolute;
   height: 30%;
@@ -60,23 +49,21 @@ z-index: 1 !important;
       right: 0%;
     }
 `;
-const Stuff = styled.div `
+const Stuff = styled.div`
   margin: -75px;
   width: 50%;
   display: inline-block;
 `;
-const FirstRow = styled(Row)
-`
-  background-color: #CF67B8;
+const FirstRow = styled(Row)`
+  background-color: #cf67b8;
   margin-top: ${window.screen.availHeight}px;
   height: 100%;
 `;
-const BackGrid = styled(Grid)
-`
+const BackGrid = styled(Grid)`
   background-color: #833471;
 `;
-var Mad = styled.h1 `
-font-family: Open Sans;
+var Mad = styled.h1`
+  font-family: Open Sans;
   display: inline-block;
   position: absolute;
   width: 50%;
@@ -102,27 +89,19 @@ font-family: Open Sans;
 export default class Main extends Component {
   render() {
     return (
-    <BackGrid fluid>
-        <FirstRow>
-            <Con>
-                <Stuff>
-                    <Mads width="400" height="400" />
-                </Stuff>
-                <Mad left={ "0"} right={ "50%"}>
-                    M A D
-                </Mad>
-                <Mad left={ "50%"} right={ "0%"}>
-                    D I E
-                </Mad>
-            </Con>
-        </FirstRow>
+      <BackGrid fluid>
         <Row fluid>
-            <Page img={Bis} />
-            <Page solid Header={ "BISOU THE DOG"} Text={ "Vivre sans aimer n’est pas proprement vivre."} color={ "#141D71"} />
-            <Page img={FLower} Header={ "BEAUTY."} />
-            <Page solid  Header={ "FLOWERS ARE PRETTY."} color={ "#20083E"} />
+          <Page img={FLower} Header={"MADDIE."} />
+          <Page solid color={"#8FD8D2"} Header={"Yer a wizard"} />
+          <Page img={Bis} />
+          <Page
+            solid
+            Header={"BISOU THE DOG"}
+            Text={"Vivre sans aimer n’est pas proprement vivre."}
+            color={"#92EFCD"}
+          />
         </Row>
-    </BackGrid>
+      </BackGrid>
     );
   }
 }

@@ -25,14 +25,16 @@ const P = styled.h1`
 `;
 
 const Pages = styled.div`
+  margin-bottom: -20px;
   font-family: league gothic;
   height: ${window.screen.availHeight}px;
   ${props =>
     props.solid
-      ? (props.color? 
-    ` color: #fff;
-      background:${props.color}`:`
-      background : #fff;`)
+      ? props.color
+        ? ` color: #DD735B;
+      background:${props.color}`
+        : `
+      background : #DD735B;`
       : `
       background-size: cover;
       background-position-x: 50%;
@@ -45,10 +47,11 @@ export default class Page extends Component {
   render() {
     return (
       <Pages {...this.props}>
-      {this.props.Header? 
-        <H1 {...this.props}> {this.props.Header} </H1>
-        :
-        ""}
+        {this.props.Header ? (
+          <H1 {...this.props}> {this.props.Header} </H1>
+        ) : (
+          ""
+        )}
         <P> {this.props.Text}</P>
       </Pages>
     );
